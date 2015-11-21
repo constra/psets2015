@@ -12,6 +12,8 @@ int main(void)
     //Get the initials
     if (name != NULL)
     {
+        if (isalpha(name[0]))
+            printf("%c", toupper(name[0]));
         for (int i = 0, n = strlen(name); i < n; i++)
         {
             if (isalpha(name[i]) && name[i-1] == ' ')
