@@ -15,9 +15,18 @@ int main( int argc, char *argv[] )
         printf("Usage ./vignere.c [keyword]\n");
         return 1;
     }
-    /*Encryption*/
-    else
+
+    for (int i = 0, n = strlen(argv[1]); i < n; i++)
     {
+        if (!isalpha(argv[1][i]))
+        {
+            printf("Please use a string as keyword\n");
+            return 1;
+        }
+    }
+    /*Encryption*/
+    /*else*/
+    /*{*/
         /*Get keyword and text  */
         string k = argv[1];
         string input_text = GetString();
@@ -42,7 +51,7 @@ int main( int argc, char *argv[] )
         printf("\n");
  
         return 0;
-    }
+    /*}*/
 }
 
 /*Return encrypted charactor*/
