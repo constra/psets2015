@@ -23,14 +23,21 @@ int main( int argc, char *argv[] )
         string input_text = GetString();
         
         int *key_index = crypt_idx(k);
-        printf("%i\n", key_index[4]);
+
         /*print the encrypted text*/
+        int z = 0;
         for (int i = 0, n = strlen(input_text); i < n; i++)
         {
-            int j = (i+1) % strlen(k);
-            int k_index = key_index[j];
-            char p = crypt(input_text[i], k_index);
-            printf("%c", p);
+            if (isalpha(input_text[i]))
+            {
+                int j = (z) % strlen(k);
+                int k_index = key_index[j];
+                char p = crypt(input_text[i], k_index);
+                printf("%c", p);
+                z++;
+            }
+            else
+                printf("%c", input_text[i]);
         }
         printf("\n");
  
@@ -68,11 +75,11 @@ int *crypt_idx(char* word)
     {
         if ( (isupper(word[i])))
         {
-           index[i] = word[i] - 65 + 1; 
+           index[i] = word[i] - 65; 
         }
         else if ((islower(word[i])))
         {
-           index[i] = word[i] - 97 + 1;
+           index[i] = word[i] - 97;
         }
     }
     return index;
