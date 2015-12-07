@@ -1,5 +1,5 @@
 /*
- * FILE
+ * data_len.cc
  * Copyright © constra
  * Email: sun.mai@outlook.com
  */
@@ -18,6 +18,8 @@ main( int argc, char *argv[] )
     cout << "Size of float : " << sizeof(float) << "byte" << endl;
     cout << "Size of double : " << sizeof(double) << "byte" << endl;
     cout << "Size of wchar_t : " << sizeof(wchar_t) << "byte" << endl;
+    cout << "Size of string : " << sizeof(string) << "byte" << endl;
+    cout << "Size of long long : " << sizeof(long long) << "byte" << endl;
 
     return 0;
 }
